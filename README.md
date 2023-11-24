@@ -1,20 +1,42 @@
+Job Portal API
+This Job Portal API, developed using Express.js and MongoDB, powers a feature-rich backend for job portal applications. Users can manage job listings, applications, and user authentication seamlessly.
 
-# Job Portal API
+Features
+Authentication: Secure access to protected routes with JWT authentication.
+Endpoints: Robust set of endpoints for user registration, job management, and application processing.
+Installation: Simple setup with prerequisites such as Node.js and MongoDB.
+Getting Started
+Clone the repository:
 
-Job Portal API is a web service for creating users , post and apply jobs.
+bash
+Copy code
+git clone https://github.com/your-username/job-portal-api.git
+Navigate to the project directory:
 
-Try the API : https://job-portal-api-b7jn.onrender.com/
+bash
+Copy code
+cd job-portal-api
+Install dependencies:
 
-API Documentation : https://job-portal-api-b7jn.onrender.com/api-doc/#/
+bash
+Copy code
+npm install
+Configure environment variables:
+Create a .env file with essential variables like PORT, MONGODB_URI, and SECRET_KEY.
 
-You can create account, login, post a job, update, delete and search a specific job.
+Start the server:
 
-Technologies : Express.js , Node.js, MongoDB and JWT
-## Deployment
+bash
+Copy code
+npm start
+Usage
+Authentication: Obtain a token via /auth/login for accessing protected routes.
+Endpoints: Manage jobs and applications through various /jobs and /applications endpoints.
+API Documentation
+For detailed information on each endpoint and request/response formats, see API documentation.
 
-To deploy this project run
+Contributing
+If you'd like to contribute, please follow the contribution guidelines.
 
-```bash
-  node server.js
-```
-
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
