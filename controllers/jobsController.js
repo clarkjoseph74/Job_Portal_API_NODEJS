@@ -52,7 +52,7 @@ const getAllJobsController = async (req,res,next)=>{
             const skip = (page - 1)*limit
             queryResult = queryResult.skip(skip).limit(limit)
             const totalJobs = await jobsModel.countDocuments(queryResult)
-            const numOfPage = Math.ceil(totalJobs/limit)
+            const numOfPage = Math.ceil(Number(totalJobs)/Number(limit))
             const jobs = await queryResult; 
     
             res.status(201).json({totalJobs , jobs,numOfPage})
