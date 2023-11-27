@@ -1,6 +1,6 @@
 const userModel = require("../models/userModel");
 
-module.exports = async (req , res,next) =>{
+const registerController = async (req , res,next) =>{
    
     try {
          const {name , email , password , location} = req.body;
@@ -31,7 +31,7 @@ module.exports = async (req , res,next) =>{
   
 }
 
-module.exports.loginController = async ( req, res , next ) => {
+const loginController = async ( req, res , next ) => {
     const {email, password} = req.body; 
     if(!email || !password){
         next("Email or password must be provided")
@@ -58,4 +58,7 @@ module.exports.loginController = async ( req, res , next ) => {
         res.status(500).json({error: error.message})
     }
 
+   
 }
+
+module.exports = { registerController , loginController}
