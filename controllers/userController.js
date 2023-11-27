@@ -28,7 +28,7 @@ const updateUserController = async (req, res , next) => {
     }
 }
 const getUsersController = async (req, res , next) => {
-    const {id} = req.body;
+    const {id} = req.user.userId
     try {
         const users = await userModel.find({_id:id}).select('-password');
         res.status(200).send({users})
