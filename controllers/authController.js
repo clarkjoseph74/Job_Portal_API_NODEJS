@@ -15,7 +15,7 @@ module.exports = async (req , res,next) =>{
         }
         const alreadyRegistered = await userModel.findOne({email})
         if(alreadyRegistered){
-             return res.status(200).send({message:"Already have an account, please login" , success : false })
+             return res.status(400).send({message:"Already have an account, please login" , success : false })
         }
         const user = await userModel.create({name, email,password})
         const token = user.createJWT();
