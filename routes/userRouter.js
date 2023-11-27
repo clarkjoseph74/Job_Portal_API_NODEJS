@@ -54,6 +54,6 @@ const router = express.Router();
  */
 
 router.put('/update', userAuth , updateUserController)
-router.get('/', getUsersController)
+router.get('/',userAuth, getUsersController)
 
 module.exports = router
