@@ -28,8 +28,9 @@ const updateUserController = async (req, res , next) => {
     }
 }
 const getUsersController = async (req, res , next) => {
+    const {id} = req.body;
     try {
-        const users = await userModel.find().select('-password');
+        const users = await userModel.find({_id:id}).select('-password');
         res.status(200).send({users})
     } catch (error) {
         next("Error when Fetching users")
